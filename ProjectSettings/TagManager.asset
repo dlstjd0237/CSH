@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Box
+  - Water
+  - UI
+  - Player
+  - Light
+  - Ground
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 2311770917
+    locked: 0
+  - name: Stage
+    uniqueID: 3839842463
+    locked: 0
+  - name: Player
+    uniqueID: 2119581867
+    locked: 0
+  - name: Box
+    uniqueID: 2446543627
+    locked: 0
+  - name: Top
+    uniqueID: 2662989959
+    locked: 0
