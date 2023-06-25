@@ -33,14 +33,17 @@ public class GameManager : MonoBehaviour
         LoadStage(_stagenum);
     }
     private void Awake()
-    {   
-       
+    {
 
-        //if(Instance != null)
+
+        //if (Instance != null)
         //{
-        //    Debug.Log("12¹ø");
         //}
-        Instance = this;
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
+            Instance = this;
 
         CreateUIManager();
         CreateCameraManager();
