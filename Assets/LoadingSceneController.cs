@@ -48,10 +48,12 @@ public class LoadingSceneController : MonoBehaviour
                 _gayG.text = (int)_gayGTimer + "%";
                 if (_bar.fillAmount >= 1f)
                 {
+                    _gayG.text = "100%";
                     op.allowSceneActivation = true;
                     yield break;
                 }
             }
+
         }
     }
 }

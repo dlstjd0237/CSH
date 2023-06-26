@@ -21,5 +21,8 @@
 }
 
 .on {
-    margin-left: -450px;
+    margin-left: -550px;
+}
+
+.InOut {
 }
