@@ -38,12 +38,12 @@ public class GameManager : MonoBehaviour
 
         //if (Instance != null)
         //{
+            Instance = this;
         //}
         //else
         //{
         //    Destroy(gameObject);
         //}
-            Instance = this;
 
         CreateUIManager();
         CreateCameraManager();
@@ -60,10 +60,10 @@ public class GameManager : MonoBehaviour
     {
         OnStageLoadStart?.Invoke();//스테이지 로딩이 시작된다.
         MapManagerInstance = null;
-        Addressables.LoadAssetAsync < GameObject>($"Level{number.ToString()}").Completed += //로드가 다되면 액션을 실행하라
+        Addressables.LoadAssetAsync<GameObject>($"Level{number.ToString()}").Completed += //로드가 다되면 액션을 실행하라
             (AsyncOperationHandle<GameObject> handle) =>
             {
-                if(_currentLevel != null)
+                if (_currentLevel != null)
                 {
                     Destroy(_currentLevel);
                     Addressables.Release(_stageLoadHandle);
@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
 
         UpdateInfoPanel();
 
-        if(_currentcannonCnt<=0/*||_currentBoxCnt <= 0*/)
+        if (_currentcannonCnt <= 0/*||_currentBoxCnt <= 0*/)
         {
             SetGameOver();
         }
@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
 
     private void CreateTimeController()
     {
-        TimeController.Instance = gameObject.AddComponent<TimeController>();    
+        TimeController.Instance = gameObject.AddComponent<TimeController>();
     }
 
     private void CreateUIManager()
@@ -143,7 +143,7 @@ public class GameManager : MonoBehaviour
 
         Transform canvasTrm = FindAnyObjectByType<Canvas>().transform;
         UIManager.Instance.Init(canvasTrm);
-        
+
     }
 
     private void CreateCameraManager()

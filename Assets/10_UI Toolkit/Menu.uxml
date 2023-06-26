@@ -1,13 +1,22 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/10_UI%20Toolkit/MenuStyles.uss?fileID=7433441132597879392&amp;guid=f66ef65ecc7113d4c93cbcc75fe0c043&amp;type=3#MenuStyles" />
-    <ui:VisualElement name="LeftSection" class="on" style="background-color: rgba(0, 0, 0, 0.5); width: 400px; height: 100%; margin-left: 0; position: relative; transition-property: margin-left; transition-duration: 0.2s; flex-shrink: 1;">
+    <ui:VisualElement name="Left" class="on" style="height: 100%; position: absolute; width: 400px; transition-duration: 1.6s; background-color: rgba(0, 0, 0, 0.55); transition-timing-function: ease-in-out-back;">
         <ui:VisualElement name="Logo" style="background-image: none; width: 400px; height: 279px; transition-property: all; margin-left: 0;">
-            <ui:Label text="Cannon&#10;Shooter" display-tooltip-when-elided="true" style="flex-shrink: 1; flex-grow: 1; align-items: center; justify-content: space-around; -unity-font-style: bold-and-italic; -unity-text-align: upper-center; -unity-font: url(&apos;project://database/Assets/07_Fonts/neodgm.ttf?fileID=12800000&amp;guid=af32aff6e526b0547b643d7147ea01f7&amp;type=3#neodgm&apos;); -unity-font-definition: initial; font-size: 96px; color: rgba(183, 177, 0, 255); text-shadow: 5px 5px 0 rgba(0, 0, 0, 255); border-left-color: rgba(0, 0, 0, 255); border-right-color: rgba(0, 0, 0, 255); border-top-color: rgba(0, 0, 0, 255); border-bottom-color: rgba(0, 0, 0, 255);" />
+            <ui:Label text="Cannon&#10;Shooter" display-tooltip-when-elided="true" style="flex-shrink: 1; flex-grow: 1; align-items: center; justify-content: space-around; -unity-font-style: bold-and-italic; -unity-text-align: middle-center; -unity-font: url(&apos;project://database/Assets/07_Fonts/neodgm.ttf?fileID=12800000&amp;guid=af32aff6e526b0547b643d7147ea01f7&amp;type=3#neodgm&apos;); -unity-font-definition: initial; font-size: 96px; color: rgb(183, 177, 0); text-shadow: 2px 2px 0 rgb(0, 0, 0); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);" />
         </ui:VisualElement>
         <ui:VisualElement name="Buttons" style="flex-grow: 1; align-items: center; justify-content: space-around; padding-bottom: 20px; transition-property: none; border-left-width: 0; margin-left: 0;">
-            <ui:Button text="Play" display-tooltip-when-elided="true" name="PlayerButto" class="menu-button" />
+            <ui:Button text="Play" display-tooltip-when-elided="true" name="PlayButto" class="menu-button" />
             <ui:Button text="Setting" display-tooltip-when-elided="true" name="SettingButton" class="menu-button" />
             <ui:Button text="Exit" display-tooltip-when-elided="true" name="ExitButton" class="menu-button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="Exit" class="on" style="height: 100%; position: absolute; width: 400px; transition-duration: 1.6s; background-color: rgba(0, 0, 0, 0.55); align-items: center; justify-content: space-around; transition-timing-function: ease-in-out-back;">
+        <ui:VisualElement name="Logo" style="background-image: none; width: 400px; height: 279px; transition-property: all; margin-left: 0;">
+            <ui:Label text="Really?" display-tooltip-when-elided="true" style="flex-shrink: 1; flex-grow: 1; align-items: center; justify-content: space-around; -unity-font-style: bold-and-italic; -unity-text-align: middle-center; -unity-font: url(&apos;project://database/Assets/07_Fonts/neodgm.ttf?fileID=12800000&amp;guid=af32aff6e526b0547b643d7147ea01f7&amp;type=3#neodgm&apos;); -unity-font-definition: initial; font-size: 101px; color: rgb(183, 177, 0); text-shadow: 2px 5px 0 rgb(0, 0, 0); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Buttons" style="flex-grow: 1; align-items: center; justify-content: space-around; padding-bottom: 20px; transition-property: none; border-left-width: 0; margin-left: 0;">
+            <ui:Button text="Yes" display-tooltip-when-elided="true" name="ExitYetButton" class="menu-button" style="color: rgb(255, 0, 0);" />
+            <ui:Button text="No" display-tooltip-when-elided="true" name="ExitNoButton" class="menu-button" style="color: rgb(0, 255, 16);" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

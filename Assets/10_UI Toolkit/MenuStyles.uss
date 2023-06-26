@@ -9,23 +9,17 @@
     border-top-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
     position: relative;
-    color: rgba(255, 255, 255, 255);
+    color: rgb(255, 255, 255);
 }
 
 .menu-button:hover {
     font-size: 90px;
     position: relative;
-    color: rgba(255, 255, 255, 255);
+    color: rgb(255, 255, 255);
     rotate: -10deg;
     transition-duration: 0.3s;
 }
 
-#LeftSection.on {
-    border-left-width: 0;
-    flex-grow: 1;
-    margin-left: 0;
-    align-items: stretch;
-    margin-bottom: 0;
-    margin-top: 0;
-    left: 0;
+.on {
+    margin-left: -450px;
 }
