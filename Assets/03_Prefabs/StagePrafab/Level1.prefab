@@ -5046,6 +5046,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2003503163890517604}
     m_Modifications:
+    - target: {fileID: 4640827720340428216, guid: 68a30e2d86fe68e46ae8da96799132b3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6696
+      objectReference: {fileID: 0}
+    - target: {fileID: 4640827720340428218, guid: 68a30e2d86fe68e46ae8da96799132b3, type: 3}
+      propertyPath: m_Size.y
+      value: 19.139126
+      objectReference: {fileID: 0}
     - target: {fileID: 4640827720526792330, guid: 68a30e2d86fe68e46ae8da96799132b3, type: 3}
       propertyPath: m_Name
       value: BackGround (1)

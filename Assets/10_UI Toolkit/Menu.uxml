@@ -5,7 +5,7 @@
             <ui:Label text="Cannon&#10;Shooter" display-tooltip-when-elided="true" style="flex-shrink: 1; flex-grow: 1; align-items: center; justify-content: space-around; -unity-font-style: bold-and-italic; -unity-text-align: middle-center; -unity-font: url(&apos;project://database/Assets/07_Fonts/neodgm.ttf?fileID=12800000&amp;guid=af32aff6e526b0547b643d7147ea01f7&amp;type=3#neodgm&apos;); -unity-font-definition: initial; font-size: 96px; color: rgb(183, 177, 0); text-shadow: 2px 2px 0 rgb(0, 0, 0); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);" />
         </ui:VisualElement>
         <ui:VisualElement name="Buttons" style="flex-grow: 1; align-items: center; justify-content: space-around; padding-bottom: 20px; transition-property: none; border-left-width: 0; margin-left: 0;">
-            <ui:Button text="Play" display-tooltip-when-elided="true" name="PlayButto" class="menu-button" />
+            <ui:Button text="Play" display-tooltip-when-elided="true" name="PlayButton" class="menu-button" />
             <ui:Button text="Setting" display-tooltip-when-elided="true" name="SettingButton" class="menu-button" />
             <ui:Button text="Exit" display-tooltip-when-elided="true" name="ExitButton" class="menu-button" />
         </ui:VisualElement>
@@ -19,5 +19,14 @@
             <ui:Button text="No" display-tooltip-when-elided="true" name="ExitNoButton" class="menu-button" style="color: rgb(0, 255, 16);" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="BackGround" class="InOut" style="position: absolute; flex-grow: 1; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0);" />
+    <ui:VisualElement name="Setting" class="on" style="height: 100%; position: absolute; width: 500px; transition-duration: 1.6s; background-color: rgba(0, 0, 0, 0.55); align-items: center; justify-content: space-around; transition-timing-function: ease-in-out-back;">
+        <ui:VisualElement name="Logo" style="background-image: none; width: 400px; height: 279px; transition-property: all; margin-left: 0;">
+            <ui:Label text="Setting" display-tooltip-when-elided="true" style="flex-shrink: 1; flex-grow: 1; align-items: center; justify-content: space-around; -unity-font-style: bold-and-italic; -unity-text-align: middle-center; -unity-font: url(&apos;project://database/Assets/07_Fonts/neodgm.ttf?fileID=12800000&amp;guid=af32aff6e526b0547b643d7147ea01f7&amp;type=3#neodgm&apos;); -unity-font-definition: initial; font-size: 101px; color: rgb(183, 177, 0); text-shadow: 2px 5px 0 rgb(0, 0, 0); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Buttons" style="flex-grow: 1; align-items: center; justify-content: space-around; padding-bottom: 20px; transition-property: none; border-left-width: 0; margin-left: 0;">
+            <ui:Slider picking-mode="Ignore" label="배경음악" value="50" high-value="100" name="BackGroundMusic" show-input-field="false" direction="Horizontal" inverted="false" style="align-items: center; justify-content: flex-end; flex-direction: column; font-size: 38px; -unity-font-definition: initial; -unity-font: url(&apos;project://database/Assets/07_Fonts/neodgm.ttf?fileID=12800000&amp;guid=af32aff6e526b0547b643d7147ea01f7&amp;type=3#neodgm&apos;); -unity-text-align: upper-center; color: rgb(255, 255, 255);" />
+            <ui:Slider picking-mode="Ignore" label="효과음" value="50" high-value="100" name="EffectSound" style="align-items: center; justify-content: flex-end; flex-direction: column; font-size: 38px; -unity-font-definition: initial; -unity-font: url(&apos;project://database/Assets/07_Fonts/neodgm.ttf?fileID=12800000&amp;guid=af32aff6e526b0547b643d7147ea01f7&amp;type=3#neodgm&apos;); -unity-text-align: upper-center; color: rgb(255, 255, 255);" />
+            <ui:Button text="Back" display-tooltip-when-elided="true" name="Back" class="menu-button" style="align-items: center; justify-content: flex-end;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
 </ui:UXML>

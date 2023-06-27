@@ -131,7 +131,7 @@ public class CannonController : MonoBehaviour
 
         //float y_rotaton = y * _rotateSpeedd * Time.deltaTime;
         _currentRotate += y * Time.deltaTime * _rotateSpeedd;
-        _currentRotate = Mathf.Clamp(_currentRotate, 0, 90f);
+        _currentRotate = Mathf.Clamp(_currentRotate, -45, 90f);
 
         _barrelTrm.rotation = Quaternion.Euler(0, 0, _currentRotate);//오일러 1학년때는 이것만 
 
