@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/10_UI%20Toolkit/InGameStates/StateStyle.uss?fileID=7433441132597879392&amp;guid=a8c1c6eb83ab0864fbe534c6b018ae82&amp;type=3#StateStyle" />
+    <ui:VisualElement name="StateView" style="flex-grow: 1; transition-duration: 0s; transition-timing-function: ease-in-out-back; left: auto;">
+        <ui:VisualElement name="State" class="on" style="width: 40%; height: 100%; background-color: rgb(10, 9, 9); align-items: center; justify-content: center; background-image: url(&apos;project://database/Assets/04.Sprites/Background/2017-03-24-09-16-47.jpg?fileID=2800000&amp;guid=0eb54b2446e0e4d4dbdf7045c090bbbf&amp;type=3#2017-03-24-09-16-47&apos;); rotate: 0; transition-duration: 1.6s;">
+            <ui:VisualElement style="width: 90%; height: 80%; background-color: rgb(0, 0, 0);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

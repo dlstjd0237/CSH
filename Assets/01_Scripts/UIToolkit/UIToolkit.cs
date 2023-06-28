@@ -28,11 +28,10 @@ public class UIToolkit : MonoBehaviour
     private AudioSource _audiioSource;
 
     private BackGroundAudio _backAudio;
-    
+
     private void Awake()
     {
         _audiioSource = GetComponent<AudioSource>();
-
 
 
         _backAudio = FindAnyObjectByType<BackGroundAudio>();

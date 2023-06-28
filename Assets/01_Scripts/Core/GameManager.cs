@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
         //    Destroy(gameObject);
         //}
 
+
         CreateUIManager();
         CreateCameraManager();
 
@@ -105,7 +106,7 @@ public class GameManager : MonoBehaviour
 
         if (_currentcannonCnt <= 0/*||_currentBoxCnt <= 0*/)
         {
-            SetGameOver();
+            //SetGameOver();
         }
         if (_currentBoxCnt == 0)
         {
