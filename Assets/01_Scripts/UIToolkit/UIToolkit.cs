@@ -11,7 +11,9 @@ public class UIToolkit : MonoBehaviour
     private VisualElement _left;
     private VisualElement _exitMenu;
     private VisualElement _settingMenu;
-    private VisualElement _backGround;
+
+    [SerializeField]
+    private UnityEngine.UI.Image _fadeImager;
 
     private Button _menuStartButton;
     private Button _menuSettingButton;
@@ -23,25 +25,22 @@ public class UIToolkit : MonoBehaviour
     private Slider _backGroundMusic;
     private Slider _effectSound;
 
-    //[SerializeField]
-    //private AudioClip []intro_music;
-
     private AudioSource _audiioSource;
 
     private BackGroundAudio _backAudio;
+    
     private void Awake()
     {
         _audiioSource = GetComponent<AudioSource>();
-        //_audiioSource.clip = intro_music[0];
-        //_audiioSource.Play();
-        //_audiioSource.loop = true;
+
+
+
         _backAudio = FindAnyObjectByType<BackGroundAudio>();
 
         _doc = GetComponent<UIDocument>();
         _left = _doc.rootVisualElement.Q<VisualElement>("Left");
         _exitMenu = _doc.rootVisualElement.Q<VisualElement>("Exit");
         _settingMenu = _doc.rootVisualElement.Q<VisualElement>("Setting");
-        _backGround = _doc.rootVisualElement.Q<VisualElement>("BackGround");
 
         _menuStartButton = _doc.rootVisualElement.Q<Button>("PlayButton");
         _menuStartButton.clicked += StartGame;
@@ -84,7 +83,7 @@ public class UIToolkit : MonoBehaviour
         _audiioSource.Play();
         _settingMenu.AddToClassList("on");
         _left.RemoveFromClassList("on");
-       
+
     }
 
     private void SettingOn()
@@ -95,12 +94,11 @@ public class UIToolkit : MonoBehaviour
         _settingMenu.RemoveFromClassList("on");
     }
 
-    private void StartGame()
+    private void StartGame() // 게임 시작
     {
-        //_audiioSource.clip = intro_music[1];
+        StartCoroutine(FadeIn());
         _audiioSource.Play();
         _left.AddToClassList("on");
-        Invoke("Loading", 2);     
     }
     private void Loading()
     {
@@ -138,10 +136,22 @@ public class UIToolkit : MonoBehaviour
         StartCoroutine(GameStart());
     }
 
-    IEnumerator GameStart()
+    private IEnumerator GameStart()
     {
         yield return new WaitForSeconds(6.6f);
         _left.RemoveFromClassList("on");
     }
+    private IEnumerator FadeIn()
+    {
+        _fadeImager.color = new Color(_fadeImager.color.r, _fadeImager.color.g, _fadeImager.color.b, 0);
+        while (_fadeImager.color.a < 1)
+        {
+            _fadeImager.color = new Color(_fadeImager.color.r, _fadeImager.color.g, _fadeImager.color.b, _fadeImager.color.a + (Time.deltaTime / 2));
+            yield return null;
+        }
+        Loading();
+    }
+
+   
 
 }

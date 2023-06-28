@@ -16,4 +16,8 @@ public class BackGroundAudio : MonoBehaviour
         PlayerPrefs.GetFloat("BackGroundAudio");
         _audioSource.volume = num;
     }
+    public void StopAudio()
+    {
+        _audioSource.Stop();
+    } 
 }

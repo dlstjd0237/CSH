@@ -4881,7 +4881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BoxCount: 0
-  CannonCount: 3
+  CannonCount: 5
 --- !u!114 &7994752423174420679
 MonoBehaviour:
   m_ObjectHideFlags: 0

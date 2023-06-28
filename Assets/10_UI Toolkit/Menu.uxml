@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/10_UI%20Toolkit/MenuStyles.uss?fileID=7433441132597879392&amp;guid=f66ef65ecc7113d4c93cbcc75fe0c043&amp;type=3#MenuStyles" />
     <ui:VisualElement name="Left" class="on" style="height: 100%; position: absolute; width: 500px; transition-duration: 1.6s; background-color: rgba(0, 0, 0, 0.55); transition-timing-function: ease-in-out-back; align-items: center;">
         <ui:VisualElement name="Logo" style="background-image: none; width: 400px; height: 279px; transition-property: all; margin-left: 0; align-items: stretch;">
-            <ui:Label text="Cannon&#10;Shooter" display-tooltip-when-elided="true" style="flex-shrink: 1; flex-grow: 1; align-items: center; justify-content: space-around; -unity-font-style: bold-and-italic; -unity-text-align: middle-center; -unity-font: url(&apos;project://database/Assets/07_Fonts/neodgm.ttf?fileID=12800000&amp;guid=af32aff6e526b0547b643d7147ea01f7&amp;type=3#neodgm&apos;); -unity-font-definition: initial; font-size: 96px; color: rgb(183, 177, 0); text-shadow: 2px 2px 0 rgb(0, 0, 0); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);" />
+            <ui:Label text="대포 혼자&#10;레벨 업" display-tooltip-when-elided="true" style="flex-shrink: 1; flex-grow: 1; align-items: center; justify-content: space-around; -unity-font-style: bold-and-italic; -unity-text-align: middle-center; -unity-font: url(&apos;project://database/Assets/07_Fonts/neodgm.ttf?fileID=12800000&amp;guid=af32aff6e526b0547b643d7147ea01f7&amp;type=3#neodgm&apos;); -unity-font-definition: initial; font-size: 96px; color: rgb(183, 177, 0); text-shadow: 4px 4px 0 rgb(0, 0, 0); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);" />
         </ui:VisualElement>
         <ui:VisualElement name="Buttons" style="flex-grow: 1; align-items: center; justify-content: space-around; padding-bottom: 20px; transition-property: none; border-left-width: 0; margin-left: 0;">
             <ui:Button text="Play" display-tooltip-when-elided="true" name="PlayButton" class="menu-button" />
@@ -29,4 +29,5 @@
             <ui:Button text="Back" display-tooltip-when-elided="true" name="Back" class="menu-button" style="align-items: center; justify-content: flex-end;" />
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:VisualElement name="BackGround" focusable="false" picking-mode="Ignore" style="position: absolute; flex-grow: 1; width: 100%; height: 100%; display: flex; visibility: visible; background-color: rgba(0, 0, 0, 0); overflow: visible;" />
 </ui:UXML>

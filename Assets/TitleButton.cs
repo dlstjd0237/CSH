@@ -20,6 +20,8 @@ public class TitleButton : MonoBehaviour
     }
     IEnumerator Co()
     {
+        BackGroundAudio _back = FindAnyObjectByType<BackGroundAudio>();
+        _back.StopAudio();
         _audioSource.Play();
         _inOut = false;
         _softImage.raycastTarget = true;
