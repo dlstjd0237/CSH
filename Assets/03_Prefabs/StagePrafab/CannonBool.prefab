@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5761982337753742856}
   - component: {fileID: 4457603503615449363}
   - component: {fileID: 2046459724534694780}
+  - component: {fileID: 3162253400934178532}
   m_Layer: 0
   m_Name: CannonBool
   m_TagString: Untagged
@@ -141,3 +142,15 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _expEffect: {fileID: 5023722141927399515, guid: 794b854ea1f75b045886bd4c655d92cd, type: 3}
+--- !u!114 &3162253400934178532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003503163890517605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de793c5a126b1e44adf6ea117d04ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
