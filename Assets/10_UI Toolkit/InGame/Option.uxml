@@ -1,0 +1,15 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/10_UI%20Toolkit/InGame/OptionStyle.uss?fileID=7433441132597879392&amp;guid=787af58b97266b9468f843f9ba520b82&amp;type=3#OptionStyle" />
+    <ui:VisualElement name="OptionMenu" style="height: auto; width: auto; flex-grow: 1; align-items: center;">
+        <ui:VisualElement name="Option" class="on" style="width: 75%; height: 100%; background-color: rgba(0, 0, 0, 0.27); transition-duration: 0.8s; transition-timing-function: ease-in-out-back;">
+            <ui:VisualElement name="Title">
+                <ui:Label text="Option" display-tooltip-when-elided="true" style="align-items: stretch; -unity-text-align: upper-center; font-size: 105px; -unity-font-definition: initial; -unity-font: url(&apos;project://database/Assets/07_Fonts/neodgm.ttf?fileID=12800000&amp;guid=af32aff6e526b0547b643d7147ea01f7&amp;type=3#neodgm&apos;); -unity-font-style: italic; color: rgb(255, 199, 0); text-shadow: 5px 5px 0 rgb(0, 0, 0);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Buttons" style="align-items: stretch; background-color: rgba(0, 0, 0, 0); border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); justify-content: space-around; flex-grow: 1;">
+                <ui:Button text="Audio" display-tooltip-when-elided="true" name="Audio" class="option-button" style="transition-duration: 0.6s;" />
+                <ui:Button text="Button" display-tooltip-when-elided="true" class="option-button" style="transition-duration: 0.6s;" />
+                <ui:Button text="Button" display-tooltip-when-elided="true" class="option-button" style="transition-duration: 0.6s;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

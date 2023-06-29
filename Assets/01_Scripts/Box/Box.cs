@@ -12,6 +12,7 @@ public class Box : MonoBehaviour
         DebriEffect effect = PoolManager.Instance.Pop("DebrlEffect") as DebriEffect;
         effect.transform.position = transform.position;
         effect.Explosion(dir, force);
+        StateManager.Instance.AddCoin(100);
 
         Destroy(gameObject); //자기ㅇ는 없게고 파티클 이펙트 만들어주기
     }

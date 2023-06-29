@@ -5748,7 +5748,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4117111383551650331, guid: 7301f5d168057da4893fd6ca059c956b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7301f5d168057da4893fd6ca059c956b, type: 3}
 --- !u!4 &817739099 stripped
 Transform:

@@ -38,6 +38,8 @@ public class StatePanel : MonoBehaviour
         Sequence seq = DOTween.Sequence();
         seq.Append(_rectTrm.DOAnchorPosX(-410, 0.5f));
         seq.Join(_stateImage.DOFade(1, 0.5f));
+        seq.SetUpdate(true);
+        Time.timeScale = 0;
         _state = true;
     }
 
@@ -46,6 +48,8 @@ public class StatePanel : MonoBehaviour
         Sequence seq = DOTween.Sequence();
         seq.Append(_rectTrm.DOAnchorPosX(_screenSize.x, 0.5f));
         seq.Join(_stateImage.DOFade(0, 0.5f));
+        seq.SetUpdate(true);
+        Time.timeScale = 1;
         _state = false;
     }
 
