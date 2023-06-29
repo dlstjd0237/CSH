@@ -26,6 +26,8 @@ public class Projectary : MonoBehaviour
         }
         _delta = _time / _count;
     }
+
+
     public void DrawLine(Vector2 pos, Vector3 power)
     {
         bool flag = true;
