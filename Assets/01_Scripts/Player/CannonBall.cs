@@ -50,7 +50,7 @@ public class CannonBall : PoolableMono
         if (_isActive == false) return;
 
         _isActive = false; //한번만 통지 받도록
-        float expRadius = 3f;
+        float expRadius = 2f;
         Explosion effect = PoolManager.Instance.Pop("ExplsionParticle") as Explosion;
         effect.transform.position = transform.position;
         effect.PlayExplosion();

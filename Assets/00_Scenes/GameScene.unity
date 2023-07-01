@@ -1323,7 +1323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BoundingShape2D: {fileID: 0}
+  m_BoundingShape2D: {fileID: 1899573394}
   m_Damping: 1
   m_MaxWindowSize: -1
 --- !u!1 &759332614
@@ -3690,8 +3690,8 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 45, y: 7}
       - {x: -17, y: 7}
-      - {x: -17, y: -9}
-      - {x: 45, y: -9}
+      - {x: -17, y: -20}
+      - {x: 45, y: -20}
 --- !u!4 &1899573395
 Transform:
   m_ObjectHideFlags: 0

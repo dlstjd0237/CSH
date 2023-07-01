@@ -23,3 +23,7 @@
 .on {
     margin-left: -550px;
 }
+
+#Helpmenu.show {
+    margin-top: -972px;
+}

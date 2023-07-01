@@ -26,8 +26,16 @@
         <ui:VisualElement name="Buttons" style="flex-grow: 1; align-items: center; justify-content: space-around; padding-bottom: 20px; transition-property: none; border-left-width: 0; margin-left: 0;">
             <ui:Slider picking-mode="Ignore" label="배경음악" value="50" high-value="100" name="BackGroundMusic" show-input-field="false" direction="Horizontal" inverted="false" style="align-items: center; justify-content: flex-end; flex-direction: column; font-size: 38px; -unity-font-definition: initial; -unity-font: url(&apos;project://database/Assets/07_Fonts/neodgm.ttf?fileID=12800000&amp;guid=af32aff6e526b0547b643d7147ea01f7&amp;type=3#neodgm&apos;); -unity-text-align: upper-center; color: rgb(255, 255, 255);" />
             <ui:Slider picking-mode="Ignore" label="효과음" value="50" high-value="100" name="EffectSound" style="align-items: center; justify-content: flex-end; flex-direction: column; font-size: 38px; -unity-font-definition: initial; -unity-font: url(&apos;project://database/Assets/07_Fonts/neodgm.ttf?fileID=12800000&amp;guid=af32aff6e526b0547b643d7147ea01f7&amp;type=3#neodgm&apos;); -unity-text-align: upper-center; color: rgb(255, 255, 255);" />
+            <ui:Button text="도움말" display-tooltip-when-elided="true" name="HelpButton" class="menu-button" style="color: rgb(211, 255, 119); -unity-font-style: normal; font-size: 54px; position: absolute; left: 310px; top: 0;" />
             <ui:Button text="Back" display-tooltip-when-elided="true" name="Back" class="menu-button" style="align-items: center; justify-content: flex-end;" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="BackGround" focusable="false" picking-mode="Ignore" style="position: absolute; flex-grow: 1; width: 100%; height: 100%; display: flex; visibility: visible; background-color: rgba(0, 0, 0, 0); overflow: visible;" />
+    <ui:VisualElement name="BackGround" focusable="false" picking-mode="Ignore" class="on" style="position: absolute; flex-grow: 1; width: 100%; height: 100%; display: flex; visibility: visible; background-color: rgba(0, 0, 0, 0); overflow: visible;" />
+    <ui:VisualElement name="Helpmenu" class="show" style="width: 80%; height: 80%; left: 160px; background-color: rgba(0, 0, 0, 0.5); align-items: stretch; justify-content: flex-end; flex-direction: row; transition-timing-function: ease-in-out-back; transition-duration: 1.6s;">
+        <ui:VisualElement name="Image" style="width: 70%; height: 100%; background-image: url(&apos;project://database/Assets/04.Sprites/Background/%EC%BA%A1%EC%B2%98.JPG?fileID=2800000&amp;guid=82b9f7be031c42e46a9b83ef6dd42bc0&amp;type=3#캡처&apos;); flex-grow: 0;" />
+        <ui:VisualElement style="width: 30%; height: 100%; left: auto; visibility: visible; overflow: visible; justify-content: space-around; align-items: center;">
+            <ui:Label text="ESC : 설정창&#10;TAB : 상태창&#10;&lt;- -&gt; : 카메라 좌우 이동&#10;Space :  공격&#10;&#10;적을 처치하여 금화를&#10;모으고 대포를 레벨 업&#10;시켜 성을 치켜내세요!" display-tooltip-when-elided="true" name="Label" style="-unity-font-definition: initial; font-size: 29px; -unity-font: url(&apos;project://database/Assets/07_Fonts/neodgm.ttf?fileID=12800000&amp;guid=af32aff6e526b0547b643d7147ea01f7&amp;type=3#neodgm&apos;); color: rgb(255, 255, 255);" />
+            <ui:Button text="Back" display-tooltip-when-elided="true" name="HelpBack" class="menu-button" style="align-items: center; justify-content: flex-end; color: rgb(255, 255, 255); position: absolute; bottom: 6px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
 </ui:UXML>

@@ -11,7 +11,7 @@ public class UIToolkit : MonoBehaviour
     private VisualElement _left;
     private VisualElement _exitMenu;
     private VisualElement _settingMenu;
-
+    private VisualElement _helpMenu;
     [SerializeField]
     private UnityEngine.UI.Image _fadeImager;
 
@@ -21,6 +21,8 @@ public class UIToolkit : MonoBehaviour
     private Button _exitNoButton;
     private Button _exitYesButton;
     private Button _settingBackButton;
+    private Button _settingHelpButton;
+    private Button _helpBackButton;
 
     private Slider _backGroundMusic;
     private Slider _effectSound;
@@ -40,6 +42,7 @@ public class UIToolkit : MonoBehaviour
         _left = _doc.rootVisualElement.Q<VisualElement>("Left");
         _exitMenu = _doc.rootVisualElement.Q<VisualElement>("Exit");
         _settingMenu = _doc.rootVisualElement.Q<VisualElement>("Setting");
+        _helpMenu = _doc.rootVisualElement.Q<VisualElement>("Helpmenu");
 
         _menuStartButton = _doc.rootVisualElement.Q<Button>("PlayButton");
         _menuStartButton.clicked += StartGame;
@@ -59,10 +62,28 @@ public class UIToolkit : MonoBehaviour
         _settingBackButton = _doc.rootVisualElement.Q<Button>("Back");
         _settingBackButton.clicked += SettingBack;
 
+        _settingHelpButton = _doc.rootVisualElement.Q<Button>("HelpButton");
+        _settingHelpButton.clicked += OnHelpMenu;
 
+        _helpBackButton = _doc.rootVisualElement.Q<Button>("HelpBack");
+        _helpBackButton.clicked += OffHelpMenu;
 
         _backGroundMusic = _doc.rootVisualElement.Q<Slider>("BackGroundMusic");
         _effectSound = _doc.rootVisualElement.Q<Slider>("EffectSound");
+    }
+
+    private void OffHelpMenu()
+    {
+        _audiioSource.Play();
+        _helpMenu.AddToClassList("show");
+        _settingMenu.RemoveFromClassList("on");
+    }
+
+    private void OnHelpMenu()
+    {
+        _audiioSource.Play();
+        _settingMenu.AddToClassList("on");
+        _helpMenu.RemoveFromClassList("show");
     }
 
     private void Update()
@@ -109,7 +130,6 @@ public class UIToolkit : MonoBehaviour
         //_audiioSource.clip = intro_music[1];
         _audiioSource.Play();
         _exitMenu.AddToClassList("on");
-        Debug.Log("∞‘¿” ¡æ∑·µ ");
         Application.Quit();
     }
 
@@ -137,7 +157,8 @@ public class UIToolkit : MonoBehaviour
 
     private IEnumerator GameStart()
     {
-        yield return new WaitForSeconds(6.6f);
+        var wfs = new WaitForSeconds(6.6f);
+        yield return wfs;
         _left.RemoveFromClassList("on");
     }
     private IEnumerator FadeIn()

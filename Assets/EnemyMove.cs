@@ -21,9 +21,13 @@ public class EnemyMove : MonoBehaviour
     private void FixedUpdate()
     {
         rayHit = Physics2D.Raycast(_rig2D.position, Vector2.left, 2.5f, LayerMask.GetMask("Ground"));
-        if(rayHit.collider != null)
+        if (rayHit.collider != null)
         {
-            _rig2D.AddForce(new Vector3(0, 0.4f, 0), ForceMode2D.Impulse);
+            for (int i = 0; i < 3; i++)
+            {
+
+                _rig2D.AddForce(new Vector3(0, 0.4f, 0), ForceMode2D.Impulse);
+            }
         }
         transform.position += _dir * _speed * Time.deltaTime;
     }
