@@ -26,7 +26,7 @@ public class EnemyMove : MonoBehaviour
             for (int i = 0; i < 3; i++)
             {
 
-                _rig2D.AddForce(new Vector3(0, 0.4f, 0), ForceMode2D.Impulse);
+                _rig2D.AddForce(new Vector3(0, 0.5f, 0), ForceMode2D.Impulse);
             }
         }
         transform.position += _dir * _speed * Time.deltaTime;

@@ -812,6 +812,7 @@ GameObject:
   - component: {fileID: 1600120131}
   - component: {fileID: 1600120133}
   - component: {fileID: 1600120132}
+  - component: {fileID: 1600120134}
   m_Layer: 5
   m_Name: TipText
   m_TagString: Untagged
@@ -859,7 +860,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147"
+  m_text: "<bounce>\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147</bounce>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 39d630c03c3700e42a818a375ec1dca4, type: 2}
   m_sharedMaterial: {fileID: -918721233324528957, guid: 39d630c03c3700e42a818a375ec1dca4, type: 2}
@@ -936,6 +937,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600120130}
   m_CullTransparentMesh: 1
+--- !u!114 &1600120134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600120130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ace8ced0e81c847968cdca0aeda757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typewriterStartsAutomatically: 0
+  animationLoop: 0
+  timeScale: 0
+  _text: "<bounce>\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147\u3147</bounce>"
+  useDynamicScaling: 1
+  referenceFontSize: 10
+  isResettingTimeOnNewText: 1
+  useDefaultDatabases: 1
+  databaseBehaviors: {fileID: 11400000, guid: 4101a6a672b2255488a06d3ac148a92d, type: 2}
+  databaseAppearances: {fileID: 11400000, guid: 6c74a039ecac4204aa46c937e465fa9c, type: 2}
+  databaseActions: {fileID: 11400000, guid: 6c51e2f945c0abb4cbb2764983cdc9ff, type: 2}
+  defaultAppearancesTags:
+  - size
+  defaultDisappearancesTags:
+  - fade
+  defaultBehaviorsTags: []
+  defaultTagsMode: 0
 --- !u!1 &1840142382
 GameObject:
   m_ObjectHideFlags: 0

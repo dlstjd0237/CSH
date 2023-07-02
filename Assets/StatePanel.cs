@@ -36,7 +36,7 @@ public class StatePanel : MonoBehaviour
     private void OnScreen()
     {
         Sequence seq = DOTween.Sequence();
-        seq.Append(_rectTrm.DOAnchorPosX(-410, 0.5f));
+        seq.Append(_rectTrm.DOAnchorPosX(-410, 0.5f).SetEase(Ease.InOutBack));
         seq.Join(_stateImage.DOFade(1, 0.5f));
         seq.SetUpdate(true);
         Time.timeScale = 0;
@@ -46,7 +46,7 @@ public class StatePanel : MonoBehaviour
     private void OffScreen()
     {
         Sequence seq = DOTween.Sequence();
-        seq.Append(_rectTrm.DOAnchorPosX(_screenSize.x, 0.5f));
+        seq.Append(_rectTrm.DOAnchorPosX(_screenSize.x, 0.5f).SetEase(Ease.InOutBack));
         seq.Join(_stateImage.DOFade(0, 0.5f));
         seq.SetUpdate(true);
         Time.timeScale = 1;

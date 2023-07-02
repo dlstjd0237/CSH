@@ -36,7 +36,7 @@ public class LoadingSceneController : MonoBehaviour
     private void ChangeTipText()
     {
         int num = Random.Range(0, _tip.Length);
-        _tipText.text = _tip[num];
+        _tipText.text = "<bounce>" + _tip[num]+ "</bounce>";
     }
     IEnumerator LoadSceneProcess()
     {
