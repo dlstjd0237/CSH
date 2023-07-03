@@ -59,8 +59,9 @@ public class CannonController : MonoBehaviour
     {
         float x = Input.GetAxisRaw("Horizontal");
         float _speed = 20f;
+        float y = Input.GetAxisRaw("Vertical");
 
-        _camRig.Translate(new Vector3(x * _speed * Time.deltaTime, 0, 0), Space.World);
+        _camRig.Translate(new Vector3(x * _speed * Time.deltaTime, y * _speed * Time.deltaTime, 0), Space.World);
     }
 
     private void HandleFire()
@@ -75,7 +76,7 @@ public class CannonController : MonoBehaviour
             _currentPower += _chargingSpeed * Time.deltaTime;
             _currentPower = Math.Clamp(_currentPower, 0, _maxFirePower);
 
-            _projectary.DrawLine(_firePosTrm.position, _firePosTrm.right * _currentPower*(1/ballMass));
+            _projectary.DrawLine(_firePosTrm.position, _firePosTrm.right * _currentPower * (1 / ballMass));
 
             UIManager.Instance.SetFillGayge(_currentPower, _maxFirePower);
         }
@@ -112,7 +113,7 @@ public class CannonController : MonoBehaviour
         ball.transform.position = _firePosTrm.position;
         ball.Fier(_firePosTrm.right * _currentPower, GoToIdle);
 
-        CameraManneger.Instance.ChangeFollowTarget(CamerCategory.BallCam,ball.transform);//발사시 카메라 미사일로 
+        CameraManneger.Instance.ChangeFollowTarget(CamerCategory.BallCam, ball.transform);//발사시 카메라 미사일로 
         CameraManneger.Instance.ChangeActiveCam(CamerCategory.BallCam);
 
     }

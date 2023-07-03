@@ -15,8 +15,10 @@ public class Stage : MonoBehaviour
 
     private void Awake()
     {
-        BoxCount = transform.Find("Boxes").childCount;
+        
         _playerPosTrm = transform.Find("CannonPos");
+        BoxCount = transform.Find("Boxes").childCount;
         _mapManager = GetComponent<MapManager>();
     }
+
 }

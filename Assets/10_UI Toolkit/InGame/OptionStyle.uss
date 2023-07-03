@@ -8,13 +8,22 @@
     border-top-color: rgba(0, 0, 0, 0);
     border-bottom-color: rgba(0, 0, 0, 0);
     -unity-text-align: upper-center;
+    color: rgb(255, 255, 255);
 }
 
 .option-button:hover {
-    rotate: 15deg;
-    font-size: 55px;
+    rotate: 0;
+    font-size: 60px;
 }
 
 .on {
     margin-left: -3400px;
+}
+
+#Buttons.Move {
+    margin-left: -900px;
+}
+
+#SettingEle.OnSetting {
+    scale: 0 1;
 }

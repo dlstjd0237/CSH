@@ -31,6 +31,7 @@ public class UIToolkit : MonoBehaviour
 
     private BackGroundAudio _backAudio;
 
+    private bool qwer = false;
     private void Awake()
     {
         _audiioSource = GetComponent<AudioSource>();
@@ -149,18 +150,23 @@ public class UIToolkit : MonoBehaviour
         _exitMenu.RemoveFromClassList("on");
 
     }
-
     private void Start()
     {
-        StartCoroutine(GameStart());
+        StartCoroutine(Co());
     }
-
-    private IEnumerator GameStart()
+    IEnumerator Co()
     {
-        var wfs = new WaitForSeconds(6.6f);
-        yield return wfs;
+        yield return new WaitForSeconds(6.6f);
         _left.RemoveFromClassList("on");
     }
+    public void StartUI()
+    {
+
+        _left.RemoveFromClassList("on");
+    }
+
+
+
     private IEnumerator FadeIn()
     {
         _fadeImager.color = new Color(_fadeImager.color.r, _fadeImager.color.g, _fadeImager.color.b, 0);
@@ -172,6 +178,6 @@ public class UIToolkit : MonoBehaviour
         Loading();
     }
 
-   
+
 
 }
