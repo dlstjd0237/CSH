@@ -24,9 +24,20 @@ public class UIManager : MonoBehaviour
     private LoadingScreen _loadingScreen;
 
     private TopInfoPanel _topInfoPanel;
+    [SerializeField]
+    private TMP_Text _lvelUpText;
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
     private void Start()
     {
         SetFillGayge(0,1);
+    }
+    public void LvelUpTextUpdate()
+    {
+        StartCoroutine(LvelUpTextUpdateCo());
     }
     public void Init(Transform canvasTrm)
     {
@@ -35,6 +46,7 @@ public class UIManager : MonoBehaviour
         _powrText = _gaugeTrm.Find("GaugeText").GetComponent<TextMeshProUGUI>();
         _msgText = canvasTrm.Find("BottomBar/MsgText").GetComponent<TextMeshProUGUI>();
         _msgText.enabled = false;
+        _lvelUpText = canvasTrm.Find("LvelUp").GetComponent<TMP_Text>();
         //텍스트 없으니 페스
         _loadingScreen = canvasTrm.Find("LoadingScreen").GetComponent<LoadingScreen>();
         GameManager.Instance.OnStageLoadStart += _loadingScreen.OpenLoadScreen;
@@ -104,7 +116,16 @@ public class UIManager : MonoBehaviour
 
         _powrText.fontSize = Mathf.Lerp(45f, 80f, ratio);
     }
-
+    public IEnumerator LvelUpTextUpdateCo()
+    {
+        _lvelUpText.color = new Color(_lvelUpText.color.r, _lvelUpText.color.g, _lvelUpText.color.b, 1);
+        yield return new WaitForSeconds(1);
+        while (_lvelUpText.color.a > 0)
+        {
+            _lvelUpText.color = new Color(_lvelUpText.color.r, _lvelUpText.color.g, _lvelUpText.color.b, _lvelUpText.color.a - (Time.deltaTime / 2)) ;
+            yield return null;
+        }
+    }
 }
 
 

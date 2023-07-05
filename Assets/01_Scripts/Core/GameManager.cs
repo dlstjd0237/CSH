@@ -27,6 +27,15 @@ public class GameManager : MonoBehaviour
     private int _currentBoxCnt = 0;
     #endregion
     private int _stagenum = 1;
+    public int expRadius = 1; //폭팔 범위
+
+    #region 플레이어 파워 잠금
+    private bool _lvel1 = false; public bool Lvel1 { get => _lvel1; set => _lvel1 = value; }
+    private bool _lvel2 = false; public bool Lvel2 { get => _lvel2; set => _lvel2 = value; }
+    private bool _lvel3 = false; public bool Lvel3 { get => _lvel3; set => _lvel3 = value; }
+    private bool _lvel4 = false; public bool Lvel4 { get => _lvel4; set => _lvel4 = value; }
+    private bool _lvel5 = false; public bool Lvel5 { get => _lvel5; set => _lvel5 = value; }
+    #endregion
 
     private void Start()
     {
@@ -38,7 +47,7 @@ public class GameManager : MonoBehaviour
 
         //if (Instance != null)
         //{
-            Instance = this;
+        Instance = this;
         //}
         //else
         //{
@@ -52,7 +61,6 @@ public class GameManager : MonoBehaviour
         CreateTimeController();
         CreatePoolManager();
     }
-
 
 
     private GameObject _currentLevel = null;
@@ -152,6 +160,15 @@ public class GameManager : MonoBehaviour
         CameraManneger.Instance = GameObject.Find("CameraSet").AddComponent<CameraManneger>();
         CameraManneger.Instance.Init();
     }
-
-
+    public void SetLvel(int Lvel)
+    {
+        switch (Lvel)
+        {
+            case 1: if (!_lvel1) { _lvel1 = true; UIManager.Instance.LvelUpTextUpdate(); } break;
+            case 2: if (!_lvel2) { _lvel2 = true; UIManager.Instance.LvelUpTextUpdate(); } break;
+            case 3: if (!_lvel3) { _lvel3 = true; UIManager.Instance.LvelUpTextUpdate(); } break;
+            case 4: if (!_lvel4) { _lvel4 = true; UIManager.Instance.LvelUpTextUpdate(); } break;
+            case 5: if (!_lvel5) { _lvel5 = true; UIManager.Instance.LvelUpTextUpdate(); } break;
+        }
+    }
 }

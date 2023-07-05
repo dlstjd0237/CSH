@@ -2,10 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public enum EnemyLvel
+{
+    Lvel1 = 1,
+    Lvel2,
+    Lvel3,
+    Lvel4,
+    Lvel5
+
+}
 public class Box : MonoBehaviour
 {
-
-    [SerializeField]  private DebriEffect _debriPrefab;
+    [SerializeField] private EnemyLvel _enemyLvel;
+    [SerializeField] private DebriEffect _debriPrefab;
 
     public void DestroyBox(Vector2 dir, float force)
     {
@@ -13,7 +23,25 @@ public class Box : MonoBehaviour
         effect.transform.position = transform.position;
         effect.Explosion(dir, force);
         StateManager.Instance.AddCoin(100);
+        if (Random.Range(0, 101) <= 100)
+        {
 
+            switch (_enemyLvel)
+            {
+                case EnemyLvel.Lvel1:
+                    if (GameManager.Instance.Lvel2) break;
+                    GameManager.Instance.SetLvel(2);
+                    GameManager.Instance.Lvel2 = true; break;
+                case EnemyLvel.Lvel2:
+                    if (GameManager.Instance.Lvel3) break;
+                    GameManager.Instance.SetLvel(3);
+                    GameManager.Instance.Lvel3 = true; break;
+                case EnemyLvel.Lvel3:
+                    GameManager.Instance.Lvel4 = true; break;
+                case EnemyLvel.Lvel4:
+                    GameManager.Instance.Lvel5 = true; break;
+            }
+        }
         gameObject.SetActive(false); //자기ㅇ는 없게고 파티클 이펙트 만들어주기
     }
 

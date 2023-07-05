@@ -27,6 +27,7 @@ public class CannonController : MonoBehaviour
     [SerializeField] float _projectaryTime = 2f;
     [SerializeField] int _projectaryCount = 20;
     [SerializeField] float ballMass = 1.4f;
+    private AudioSource _audioSource;
     private void Awake()
     {
         _camRig = transform.Find("CameraRig");
@@ -34,6 +35,8 @@ public class CannonController : MonoBehaviour
         _firePosTrm = transform.Find("Barrel/FirePos");
         _projectary = transform.Find("DrawProjectaries").GetComponent<Projectary>();
         _projectary.SetData(time: _projectaryTime, count: _projectaryCount);
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.volume = PlayerPrefs.GetFloat("EffectSound");
     }
     void Start()
     {
@@ -52,7 +55,7 @@ public class CannonController : MonoBehaviour
                 HandleView();
             }
         }
-
+        _audioSource.volume = PlayerPrefs.GetFloat("EffectSound");
     }
 
     void HandleView()
@@ -109,6 +112,7 @@ public class CannonController : MonoBehaviour
 
     private void FireCannon()
     {
+        _audioSource.Play();
         CannonBall ball = PoolManager.Instance.Pop("cannonBall") as CannonBall;
         ball.transform.position = _firePosTrm.position;
         ball.Fier(_firePosTrm.right * _currentPower, GoToIdle);

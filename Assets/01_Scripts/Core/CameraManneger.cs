@@ -25,8 +25,8 @@ public class CameraManneger : MonoBehaviour
 
     private CinemachineBrain _brainCam;
     private CinemachineBasicMultiChannelPerlin _bPerlin;
+    private CinemachineBasicMultiChannelPerlin _bRigCam;
     private Tween _prevTween = null;
-   
     public void Init()
     {
         var cannonCam = transform.Find("CannonCam").GetComponent<CinemachineVirtualCamera>();
@@ -34,7 +34,7 @@ public class CameraManneger : MonoBehaviour
         var rigCam = transform.Find("RigCam").GetComponent<CinemachineVirtualCamera>();
 
         _bPerlin = ballCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-
+        _bRigCam = rigCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         _camList.Add(new CameraSet { Category = CamerCategory.CannonCam, VCam = cannonCam });
         _camList.Add(new CameraSet { Category = CamerCategory.BallCam, VCam = ballCam });
         _camList.Add(new CameraSet { Category = CamerCategory.RigCam, VCam = rigCam });
@@ -52,6 +52,10 @@ public class CameraManneger : MonoBehaviour
             value => _bPerlin.m_AmplitudeGain = value,
             0, time);
         
+    }
+    public void ShakeCam2(float time, float power)
+    {
+        StartCoroutine(Shake(time, power));
     }
     public void ChangeFollowTarget(CamerCategory categry, Transform target)
     {
@@ -78,5 +82,14 @@ public class CameraManneger : MonoBehaviour
             }
         }
     }
-    
+    private IEnumerator Shake(float time, float power)
+    {
+        _bRigCam.m_AmplitudeGain = power;
+        _bRigCam.m_FrequencyGain = power;
+        yield return new WaitForSeconds(time);
+        _bRigCam.m_AmplitudeGain = 0;
+        _bRigCam.m_FrequencyGain = 0;
+
+    }
+
 }

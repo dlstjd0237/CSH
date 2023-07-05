@@ -6,7 +6,7 @@ public class StartCam : MonoBehaviour
 {
     private PlayableDirector _playable;
     UIToolkit _uiToolkit;
-    bool qwer = false;
+    public bool qwer = false;
     private void Awake()
     {
         _uiToolkit = FindAnyObjectByType<UIToolkit>();

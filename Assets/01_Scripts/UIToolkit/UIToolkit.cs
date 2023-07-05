@@ -100,7 +100,6 @@ public class UIToolkit : MonoBehaviour
     }
     private void SettingBack()
     {
-        //_audiioSource.clip = intro_music[1];
         _audiioSource.Play();
         _settingMenu.AddToClassList("on");
         _left.RemoveFromClassList("on");
@@ -109,7 +108,6 @@ public class UIToolkit : MonoBehaviour
 
     private void SettingOn()
     {
-        //_audiioSource.clip = intro_music[1];
         _audiioSource.Play();
         _left.AddToClassList("on");
         _settingMenu.RemoveFromClassList("on");
@@ -128,7 +126,6 @@ public class UIToolkit : MonoBehaviour
 
     private void ExitYesButtonOn()
     {
-        //_audiioSource.clip = intro_music[1];
         _audiioSource.Play();
         _exitMenu.AddToClassList("on");
         Application.Quit();
@@ -136,7 +133,6 @@ public class UIToolkit : MonoBehaviour
 
     private void ExitNoButtonOn()
     {
-        //_audiioSource.clip = intro_music[1];
         _audiioSource.Play();
         _exitMenu.AddToClassList("on");
         _left.RemoveFromClassList("on");
@@ -144,7 +140,6 @@ public class UIToolkit : MonoBehaviour
 
     private void ExitmenuOn()
     {
-        //_audiioSource.clip = intro_music[1];
         _audiioSource.Play();
         _left.AddToClassList("on");
         _exitMenu.RemoveFromClassList("on");
@@ -157,7 +152,10 @@ public class UIToolkit : MonoBehaviour
     IEnumerator Co()
     {
         yield return new WaitForSeconds(6.6f);
+        StartCam _startCam = FindAnyObjectByType<StartCam>();
+        if(_startCam.qwer==false)
         _left.RemoveFromClassList("on");
+        _startCam.qwer = true;
     }
     public void StartUI()
     {

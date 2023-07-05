@@ -37,7 +37,13 @@ public class EnemyMove : MonoBehaviour
         }
         transform.position += _dir * _speed * Time.deltaTime;
     }
-
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.collider.CompareTag("Enemy")&& _isjump == false)
+    //    {
+    //        StartCoroutine(Jump());
+    //    }
+    //}
     private IEnumerator Jump()
     {
         _isjump = true;
