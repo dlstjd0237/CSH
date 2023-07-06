@@ -16,13 +16,13 @@ public class Box : MonoBehaviour
 {
     [SerializeField] private EnemyLvel _enemyLvel;
     [SerializeField] private DebriEffect _debriPrefab;
-
+    [SerializeField] private int _point;
     public void DestroyBox(Vector2 dir, float force)
     {
         DebriEffect effect = PoolManager.Instance.Pop("DebrlEffect") as DebriEffect;
         effect.transform.position = transform.position;
         effect.Explosion(dir, force);
-        StateManager.Instance.AddCoin(100);
+        StateManager.Instance.AddCoin(_point);
         if (Random.Range(0, 101) <= 100)
         {
 
@@ -37,6 +37,8 @@ public class Box : MonoBehaviour
                     GameManager.Instance.SetLvel(3);
                     GameManager.Instance.Lvel3 = true; break;
                 case EnemyLvel.Lvel3:
+                    if (GameManager.Instance.Lvel4) break;
+                    GameManager.Instance.SetLvel(4);
                     GameManager.Instance.Lvel4 = true; break;
                 case EnemyLvel.Lvel4:
                     GameManager.Instance.Lvel5 = true; break;

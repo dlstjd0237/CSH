@@ -17,7 +17,7 @@ public class StartCam : MonoBehaviour
         if (Input.GetMouseButtonDown(0)&& qwer==false)
         {
             qwer = true;
-            _playable.time = 4f;
+            _playable.time += 4f;
             //_uiToolkit.StartUI();
         }
     }

@@ -16,9 +16,9 @@ TagManager:
   - Player
   - Light
   - Ground
-  - 
-  - 
-  - 
+  - Box2
+  - Box3
+  - Wall
   - 
   - 
   - 
