@@ -8,7 +8,8 @@ public enum BallType
     BALL,
     SKULL,
     HOUND,
-    HERO
+    HERO,
+    WOMAN_HERO
 }
 
 public class BallChange : MonoBehaviour
@@ -44,6 +45,9 @@ public class BallChange : MonoBehaviour
                 _ballType = BallType.HOUND; break;
             case "Hero":
                 _ballType = BallType.HERO; break;
+            case "Woman_Hero":
+                _ballType = BallType.WOMAN_HERO;break;
+
         }
 
     }
@@ -59,6 +63,8 @@ public class BallChange : MonoBehaviour
                 SpriteChange(2); break;
             case BallType.HERO:
                 SpriteChange(3); break;
+            case BallType.WOMAN_HERO:
+                SpriteChange(4); break;
         }
     }
     private void SpriteChange(int num)

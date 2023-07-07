@@ -48,6 +48,14 @@ public class EnemyMove : MonoBehaviour
             StartCoroutine(Jump());
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("DieBox"))
+        {
+            StateManager.Instance.SetHp(10f);
+            gameObject.SetActive(false);
+        }
+    }
     private IEnumerator Jump()
     {
         _isjump = true;

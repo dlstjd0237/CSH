@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
-
+using DG.Tweening;
 public class StateManager : MonoBehaviour
 {
     public static StateManager Instance;
 
     private int _currentClass = 0; public int CurrentClass { get => _currentClass; set => Mathf.Max(0, value); }
     private float _currentMaxHp = 100; public float CurrentMaxHp { get => _currentMaxHp; set => Mathf.Max(0, value); }
-    private float _currentHp = 0; public float CurrentHp { get => _currentHp; set => Mathf.Max(0, value); }
+    private float _currentHp = 100; public float CurrentHp { get => _currentHp; set => Mathf.Max(0, value); }
     private int _currentCoin = 0; public int CurrentCoin { get => _currentCoin; set => Mathf.Max(0, value); }
     private float _currentTime = 0; public float CurrentTime { get => _currentTime; set => Mathf.Max(0, value); }
 
@@ -23,6 +23,10 @@ public class StateManager : MonoBehaviour
 
     [SerializeField]
     private TMP_Text _coinText;
+
+    [SerializeField]
+    private Image _hpBar;
+
 
     private void Awake()
     {
@@ -38,6 +42,8 @@ public class StateManager : MonoBehaviour
         ChangeClass();
         ChangePointTest();
         ChangeCurrentCoin();
+        _hpBar.fillAmount = _currentHp / _currentMaxHp;
+
     }
 
     private void ChangePointTest()
@@ -110,6 +116,19 @@ public class StateManager : MonoBehaviour
         ChangeClass();
         CahangClassColor();
         ChangePointTest();
+    }
+
+    public void SetHp(float num)
+    {
+        _currentHp -= num;
+        if(_currentHp <= 0)
+        {
+            Debug.Log("gameOver");
+        }
+        _hpBar.DOFillAmount(_currentHp/_currentMaxHp, 0.5f);
+        Debug.Log(_currentHp);
+        //_hpBar.fillAmount = CurrentHp / CurrentMaxHp;
+
     }
 
     private void CahangClassColor()

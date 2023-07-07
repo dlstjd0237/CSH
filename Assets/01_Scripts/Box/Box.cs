@@ -41,6 +41,8 @@ public class Box : MonoBehaviour
                     GameManager.Instance.SetLvel(4);
                     GameManager.Instance.Lvel4 = true; break;
                 case EnemyLvel.Lvel4:
+                    if (GameManager.Instance.Lvel5) break;
+                    GameManager.Instance.SetLvel(5);
                     GameManager.Instance.Lvel5 = true; break;
             }
         }

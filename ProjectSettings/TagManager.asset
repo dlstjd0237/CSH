@@ -6,6 +6,7 @@ TagManager:
   tags:
   - BackGroundAudio
   - Enemy
+  - DieBox
   layers:
   - Default
   - TransparentFX

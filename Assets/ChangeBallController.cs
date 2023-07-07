@@ -39,11 +39,21 @@ public class ChangeBallController : MonoBehaviour
         }
         else { Nope(); }
     }
+    public void Woman_Hero()
+    {
+        if (GameManager.Instance.Lvel5)
+        {
+            GameManager.Instance.expRadius = 5;
+            BallChange.ChangeBall("Woman_Hero");
+        }
+        else { Nope(); }
+    }
     private void FixedUpdate()
     {
         if (GameManager.Instance.Lvel2) ChangeColor(0);
         if (GameManager.Instance.Lvel3) ChangeColor(1);
         if (GameManager.Instance.Lvel4) ChangeColor(2);
+        if (GameManager.Instance.Lvel5) ChangeColor(3);
     }
     private void ChangeColor(int num)
     {
