@@ -46,6 +46,7 @@ public class Box : MonoBehaviour
                     GameManager.Instance.Lvel5 = true; break;
             }
         }
+        GameManager.Instance.AddStagePoint(10);
         gameObject.SetActive(false); //자기ㅇ는 없게고 파티클 이펙트 만들어주기
     }
 

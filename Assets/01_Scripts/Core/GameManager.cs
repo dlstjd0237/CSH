@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private PoolingListSo _poolListSO;
 
+    private Progress _progress;
+
     public event Action OnStageLoasdComplete = null;
     public event Action OnStageLoadStart = null;
     public event Action<InfoCategory, string> OnInfoChange = null;
@@ -25,6 +27,8 @@ public class GameManager : MonoBehaviour
     #region 게임정보
     private int _currentcannonCnt = 0;
     private int _currentBoxCnt = 0;
+    private int _stagePoint = 0;
+    private int _maxStagePoint = 100;
     #endregion
     private int _stagenum = 1;
     public int expRadius = 1; //폭팔 범위
@@ -54,7 +58,7 @@ public class GameManager : MonoBehaviour
         //    Destroy(gameObject);
         //}
 
-
+        _progress = FindAnyObjectByType<Progress>();
         CreateUIManager();
         CreateCameraManager();
 
@@ -82,7 +86,22 @@ public class GameManager : MonoBehaviour
                 StartCoroutine(DelayStart()); //1초기 기다렸다가 시작 메세지 날리기
             };
     }
-
+    bool qwer = false;
+    public void AddStagePoint(int num)
+    {
+        _stagePoint += num;
+        Debug.Log(_stagePoint);
+        if (_stagePoint >= _maxStagePoint && qwer == false)
+        {
+            qwer = true;
+            _stagenum++;
+            LoadStage(_stagenum);
+            _stagePoint = 0;
+            _maxStagePoint += 50;
+            qwer = false;
+        }
+        _progress.SetProgressBar(_stagePoint, _maxStagePoint);
+    }
     private IEnumerator DelayStart()
     {
         Stage s = _currentLevel.GetComponent<Stage>();

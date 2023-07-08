@@ -90,6 +90,7 @@ public class StateManager : MonoBehaviour
 
     private void ChangeClass()
     {
+        if(_currentClass <5)
         _stateText[0].text = "µî±Þ : " + _class[_currentClass];
 
     }
@@ -123,11 +124,9 @@ public class StateManager : MonoBehaviour
         _currentHp -= num;
         if(_currentHp <= 0)
         {
-            Debug.Log("gameOver");
+            LoadingSceneController.LoadScene("Die");
         }
         _hpBar.DOFillAmount(_currentHp/_currentMaxHp, 0.5f);
-        Debug.Log(_currentHp);
-        //_hpBar.fillAmount = CurrentHp / CurrentMaxHp;
 
     }
 

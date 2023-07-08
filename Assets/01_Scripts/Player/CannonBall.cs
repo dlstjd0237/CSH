@@ -55,6 +55,7 @@ public class CannonBall : PoolableMono
         if (_isActive == false) return;
 
         _isActive = false; //한번만 통지 받도록
+        GameManager.MapManagerInstance.CheckDestroy(transform.position, GameManager.Instance.expRadius);
         Explosion effect = PoolManager.Instance.Pop("ExplsionParticle") as Explosion;
         effect.transform.position = transform.position;
         effect.PlayExplosion();
@@ -71,7 +72,6 @@ public class CannonBall : PoolableMono
         }
         CameraManneger.Instance.ShakeCam(0.8f, 3f);
 
-        GameManager.MapManagerInstance.CheckDestroy(transform.position, GameManager.Instance.expRadius);
 
         GameManager.Instance.DecreaseBallAndCannon(cannonCnt: 1, boxCnt: 0 /*colls.Length*/);
         DestroyCannonBall();

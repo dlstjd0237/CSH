@@ -16,6 +16,7 @@ public class InGameUIToolkitControll : MonoBehaviour
 
     private Button _contunueButton; //계속하기 버튼
     private Button _settingButton;
+    private Button _mainMenuButton;
 
     private Slider _backGroundSoundSlider; //배경음
     private Slider _effectSlider; //효과음
@@ -38,12 +39,21 @@ public class InGameUIToolkitControll : MonoBehaviour
         _settingButton = _doc.rootVisualElement.Q<Button>("SettingButton");
         _settingButton.clicked += OnSetting;
 
+        _mainMenuButton = _doc.rootVisualElement.Q<Button>("GoMenu");
+        _mainMenuButton.clicked += GoMenu;
+
         _backGroundSoundSlider = _doc.rootVisualElement.Q<Slider>("BackSlider");
         _backGroundSoundSlider.value = PlayerPrefs.GetFloat("BackGroundAudio") *100;
         _effectSlider = _doc.rootVisualElement.Q<Slider>("EffectSlider");
         _audio.volume = PlayerPrefs.GetFloat("EffectSound");
         _effectSlider.value = (float)_audio.volume * 100;
 
+    }
+
+    private void GoMenu()
+    {
+        OptionOut();
+        LoadingSceneController.LoadScene("StartScene");
     }
 
     private void OnSetting()

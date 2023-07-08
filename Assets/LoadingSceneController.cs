@@ -8,6 +8,8 @@ public class LoadingSceneController : MonoBehaviour
 {
     static string _nextScene;
 
+
+
     [SerializeField]
     private Image _bar;
 

@@ -5851,7 +5851,6 @@ GameObject:
   - component: {fileID: 890637658}
   - component: {fileID: 890637657}
   - component: {fileID: 890637659}
-  - component: {fileID: 890637660}
   m_Layer: 0
   m_Name: New_Chiptune_Quests
   m_TagString: BackGroundAudio
@@ -5980,18 +5979,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d34962deb7789b41bd9e78470984df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &890637660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890637656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77650ac5981fc6149a1cb8cbb21f29f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1218950215
@@ -6126,6 +6113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66142cacd2813a2418992abf2dcef74e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  qwer: 0
 --- !u!95 &1218950222
 Animator:
   serializedVersion: 5
